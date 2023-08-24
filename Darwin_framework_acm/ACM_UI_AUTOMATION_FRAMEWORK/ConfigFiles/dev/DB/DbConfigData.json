@@ -1,0 +1,21 @@
+{
+  "DbCredentials": {
+    "HostName": "localhost",
+    "DbUsername": "root",
+    "DbuserPassword": ""
+  },
+  "SqlQuery": {
+    "Enpoint_Query": [
+      "SELECT * FROM api_automation.get_openerx_endpoints where EnvironmentName='$env';"
+    ],
+    "BaseUrlQuery": [
+      "SELECT * FROM api_automation.open_baseurl where EnvironmentName='$env';"
+    ],
+    "HeadersQuery": [
+      "SELECT * FROM api_automation.open_headers;"
+    ],
+    "AuthQuery": [
+      "SELECT * FROM api_automation.client_secret;"
+    ]
+  }
+}

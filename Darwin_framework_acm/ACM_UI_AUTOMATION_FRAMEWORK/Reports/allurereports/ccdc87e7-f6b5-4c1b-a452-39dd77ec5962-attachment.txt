@@ -1,0 +1,2 @@
+Member created successfully
+Enrollment create successfully

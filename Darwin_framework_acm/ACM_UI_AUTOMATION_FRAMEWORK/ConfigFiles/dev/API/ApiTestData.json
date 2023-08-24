@@ -1,0 +1,76 @@
+{
+        "BaseUrl": {
+                "GetBaseUrl": "https://reqres.in",
+                "PostBaseUrl": "https://reqres.in",
+                "PutBaseUrl": "https://reqres.in",
+                "DeleteBaseUrl": ""
+        },
+
+        "Credentials": {
+                "ClientId": "",
+                "ClientPassword": ""
+        },
+        "Headers": {
+                "ContentTypeJson": "{'Content-Type': 'application/json'}",
+                "ContentTypeXml": "{'Content-Type': 'application/xml'}",
+                "ContentTypeText": "text/plain",
+                "ContentTypeWithJsonBlob": "{'Content-Type': 'application/json', 'x-ms-blob-type': 'BlockBlob'}",
+                "BlobType": "{'x-ms-blob-type': 'BlockBlob'}"
+        },
+
+        "PostMethodUrls": [
+                {
+                        "Valid testpost": {
+                                "testpost": {
+                                        "EndPoint": "/api/users",
+                                        "EndPointName": "testpost",
+                                        "EnvironmentName": "dev",
+                                        "ResponseCode": "[201]",
+                                        "ResponseType": "Plain"
+                                }
+                        }              
+                }
+        ],
+        "PutMethodUrls": [
+                {
+                        "Valid testput": {
+                                "testput": {
+                                        "EndPoint": "/api/users",
+                                        "EndPointName": "testget",
+                                        "EnvironmentName": "dev",
+                                        "ResponseCode": "[201]",
+                                        "ResponseType": "Plain"
+                                }
+                        }
+                        
+                }
+        ],
+        "GetMethodUrls": [
+                {
+                         "Valid testget": {
+                                 "testget": {
+                                         "EndPoint": "/api/users/{user_id}",
+                                         "EndPointName": "testget",
+                                         "EnvironmentName": "dev",
+                                         "ResponseCode": "[200]",
+                                         "ResponseType": "Json",
+                                         "ResponseValidation": ["first_name", "last_name"]
+                                 }
+                         }
+                 }
+         ],
+        "DeleteMethodUrls": [
+                {
+                        "Valid testdelete": {
+                                "testdelete": {
+                                        "EndPoint": "/api/users",
+                                        "EndPointName": "testdelete",
+                                        "EnvironmentName": "dev",
+                                        "ResponseCode": "[201]",
+                                        "ResponseType": "Plain"
+                                }
+                        }
+                        
+                }
+        ]
+}

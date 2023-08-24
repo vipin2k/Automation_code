@@ -1,0 +1,1 @@
+endPointAfterReplacement :https://reqres.in/api/2s/2

@@ -1,0 +1,7 @@
+env_name : dev
+endPointAfterReplacement : https://reqres.in/api/users
+ResponseCode : [201]
+configLogger : <RootLogger root (INFO)>
+readPayLoadJson : None
+headers : {'Content-Type': 'application/json'}
+ResponseBodyType : Plain

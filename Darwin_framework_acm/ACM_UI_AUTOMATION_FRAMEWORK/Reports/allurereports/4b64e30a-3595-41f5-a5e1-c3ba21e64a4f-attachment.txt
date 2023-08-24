@@ -1,0 +1,6 @@
+env_name : dev
+endPointAfterReplacement : https://reqres.in/api/users
+ResponseCode : [201]
+readPayLoadJson : {'name': 'morpheus', 'job': 'leader'}
+headers : {'Content-Type': 'application/json'}
+ResponseBodyType : Plain

@@ -1,0 +1,3 @@
+<selenium.webdriver.chrome.webdriver.WebDriver (session="37b4bd0baaf22cffc92aaf2fa670cfc2")>
+Member created successfully
+Test completed

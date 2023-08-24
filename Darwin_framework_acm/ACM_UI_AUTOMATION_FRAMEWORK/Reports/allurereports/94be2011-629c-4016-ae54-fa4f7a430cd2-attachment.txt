@@ -1,0 +1,4 @@
+env_name : dev
+{'url_11': 'https://amdoq11.medecision.com/ACM/medSupportAltLogin.faces', 'username': 'sbeaston', 'password': '80f7d73c5456-430da38f0b7de6131f170c57755653164ab2a353a1cc138d12b9', 'discharge_date': '01/18/2023', 'member': {'first_name': 'Bran', 'last_name': 'Leeran', 'DOB': '12/01/1978', 'Member_id': 'TN22', 'sex': 'Male', 'Member_ID': 'TN23', 'Enrollment_date': '01/12/2022'}, 'request': {'Request_date': '01/19/2023', 'Request_units': '3'}, 'practitioner': {'firstname': 'Bran', 'lastname': 'Joseph', 'provider_id': 'demo03'}, 'facility': {'facility_name': 'Teamfacility', 'facility_id': 'FA03'}}
+<selenium.webdriver.chrome.webdriver.WebDriver (session="15cda76a79ffb7d070b233d13678fdde")>
+<selenium.webdriver.chrome.webdriver.WebDriver (session="15cda76a79ffb7d070b233d13678fdde")>
