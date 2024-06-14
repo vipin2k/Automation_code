@@ -38,8 +38,6 @@ class BehavioralHealth_Prior_Auth:
     button_click_Add_outcome = "//*[@class='ui-button-text ui-c' and text()= 'Add Outcome']"
     button_save_exit_OP_req_text = "//*[@class='ui-button-text ui-c' and text() ='Save & Exit']"
     button_title_home_xpath = "//a[@title='Home']"
-
-
     button_BHPA_save_exit_text = "//*[@class='ui-button-text ui-c' and text() ='Save & Exit']"
 
     def __init__(self, driver):

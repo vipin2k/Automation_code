@@ -58,7 +58,6 @@ class Referral_BH_Request_CreationPage:
     button_click_extend_outcome = "//span[@class='ui-button-text ui-c' and text()='Extend']"
     textbox_request_name = "//*[@id='serviceDetailsForm:requestedUnits']"
     textbox_request_units_name = "//*[@id='serviceDetailsForm:requestedUnits']"
-
     textbox_review_To_Date = "//*[@id='reviewAccordion:newOutcomeForm:newOutcomeAccordion:serviceReviewOutcomeEntry:toDate_input']"
     button_save_exit_OP_req_text = "//*[@class='ui-button-text ui-c' and text() ='Save & Exit']"
     # button_title_home_xpath = "(// a[@ title='Home'])[1]"
@@ -186,7 +185,6 @@ class Referral_BH_Request_CreationPage:
 
     def clickUnits(self, unit_date):
         self.driver.find_element(By.XPATH, self.button_Units_xpath).send_keys(unit_date)
-
 
     def clickmcg_page(self):
         self.driver.find_element(By.XPATH, self.button_mcg_page_xpath).click()

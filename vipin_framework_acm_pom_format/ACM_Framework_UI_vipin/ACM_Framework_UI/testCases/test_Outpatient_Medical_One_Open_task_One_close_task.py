@@ -310,6 +310,11 @@ class Test_002_Creating_Member:
         time.sleep(2)
         self.Dp.click_close_wizard()
         time.sleep(5)
+
+
+
+
+
         # self.Dp.click_discharge_button()
         # time.sleep(2)
         # self.Dp.click_discharge_date()

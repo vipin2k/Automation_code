@@ -10,7 +10,7 @@ from CommonClass.web_utils.pages.member import Member
 from CommonClass.web_utils.pages.request import Request
 
 
-# @pytest.mark.usefixtures("test_setup")
+@pytest.mark.usefixtures("test_setup")
 class TestSample1():
     def test_sample_ui_test_case(self,uiTestData, configLogger):
         get(uiTestData["url_6"])

@@ -11,9 +11,6 @@ class LoginPage():
         self.uiTestData = uiTestData
         self.user_name_text_box_xpath = '//*[@name="loginForm:userName"]'
         self.password_text_box_xpath = "//*[@name='loginForm:clientSecret']"
-
-
-
         self.user_name_text_box_xpath_6 = "//input[@name='loginForm:userName']"
         self.password_text_box_xpath_6 = "//input[@type='password']"
         self.submit_button_xpath = "//*[@class='ui-button-text ui-c']"

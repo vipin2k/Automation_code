@@ -4,7 +4,7 @@ import pytest
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import json
-import selenium
+
 
 f = open("test_snap.json")
 data = json.load(f)
