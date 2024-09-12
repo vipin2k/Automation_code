@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.9 on win32)" generated="2024-07-24T17:57:12.915011" rpa="false" schemaversion="5">
+<suite id="s1" name="JSON request" source="D:\API_ROBOT_FRAMEWORK\TestCases\JSON_request.robot">
+<test id="s1-t1" name="testcase:" line="7">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-07-24T17:57:13.116289" level="INFO">${json_obj} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-0192'}, 'phoneNumbers': [{'type': 'iPhone', 'number': '0123-4567-888...</msg>
+<var>${json_obj}</var>
+<arg>D:/API_ROBOT_FRAMEWORK/Jsondata/jsondata.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-07-24T17:57:13.115320" elapsed="0.001972"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${json_obj}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-24T17:57:13.117292" elapsed="0.001087"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-07-24T17:57:13.137556" level="INFO">${name_value} = ['John']</msg>
+<var>${name_value}</var>
+<arg>${json_obj}</arg>
+<arg>$.firstName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-07-24T17:57:13.118379" elapsed="0.019177"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name_value[0]}</arg>
+<arg>John</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-24T17:57:13.137556" elapsed="0.001206"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-07-24T17:57:13.153986" level="INFO">${phone_num} = ['0123-4567-8888']</msg>
+<var>${phone_num}</var>
+<arg>${json_obj}</arg>
+<arg>$.phoneNumbers[0].number</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-07-24T17:57:13.138762" elapsed="0.016227"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${phone_num[0]}</arg>
+<arg>0123-4567-8888</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-24T17:57:13.154989" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-07-24T17:57:13.171380" level="INFO">${address_list} = ['630-0192']</msg>
+<var>${address_list}</var>
+<arg>${json_obj}</arg>
+<arg>$.address.postalCode</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-07-24T17:57:13.155985" elapsed="0.015395"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-07-24T17:57:13.172388" level="INFO">${address} = 630-0192</msg>
+<var>${address}</var>
+<arg>${address_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-07-24T17:57:13.172388" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Postal Code: ${address}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-24T17:57:13.172388" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${address}</arg>
+<arg>630-0192</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-24T17:57:13.173385" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-07-24T17:57:13.114319" elapsed="0.059066"/>
+</test>
+<status status="PASS" start="2024-07-24T17:57:12.918026" elapsed="0.256327"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="JSON request">JSON request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

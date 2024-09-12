@@ -1,0 +1,720 @@
+Hi this is johnbabu, i am a bachelors degree holder and for the past 2.8 years i am working as an automation tester in gold coast it solutions and my role is to design, develop and write test scripts for both UI and API, for the past 2.8years i worked on three projects, one project i do manuaal testing for 6mnths and the other 2 projects i do automation testing in both python and java. This is an healthcare domain so we need to test our ui every day so i integrated the my scripts in jenkins, which is a CI/CD tool which is used for continuous integration and continuous deployment so i created new pipepline in the jenkins and added the cron job to schedule my timings for everyday, so the script run everyday by using the jenkins tool and generate html reports for every day. after that our client needs to test the performance of our tool because the UI is slowed so we add load for our api and test it in JMETER, which is a tool used for performing performance or load test then we can maintain the of health for our project.
+
+*******************************************************************************************************************************************************
+JNJ:
+====
+
+Domain : Healthcare, fhir format and non-fhir, EHR process, multi tenant project, data exchange between 
+
+1.JNJ builts healthcare data exchange platform betwenn various vendors(data integrators -- docspera) and consumers(hospitals-- Velys). 
+
+
+2. So this is a multitenant supporting project. The EHR [electronic health record] data of various formats including fhir,non-fhir are exchanged 
+two parties[vendor,consumer] based upon their configuration. 
+
+3. The primary azure technologies involved are azure blob storage, azure functions[serverless], azure sql, jenkins. 
+
+4. On automation/manual testing perspective my role is to design-develop and execute test scripts to verify the QA functionality of azure function based  microservices --- [bundle,unbundle,patient,practitioner,organization] using technologies of robot framework for UI, pytest for API.
+
+5. Bundle -- it validates the incoming resources into blob storage and unbundle arranges the data for consumption. My work is to automate the process of logging to azure portal. Upload the desired EHR file into landing/ingress storage account and navigate automatically to processing, error and dlq 
+storage account to make sure file is processed correctly --- All these is carried out using robot frame work UI automation. 
+
+6. The records processed are verified using the HTTP Serverless microservices of Patient, Practitioner and Organization utilizing the Pytest BDD framework for API testing. 
+
+7. All the reports are automated JENKINS and reports are uploaded to JIRA X-ray for verification in QA enviroment. 
+
+8. The load testing on serverless microservices is carried out using J-METER and flood.io to verify the load handling and autoscaling capability of azure functions. 
+
+
+*******************************************************************************************************************************************************
+BDD
+===
+
+Scenario: Ability to ingest Non FHIR data from DocSpera
+    Given User wants to add non-FHIR JSON (Checklist, Intake Form & Intake Smart Scheduler) from DocSpera to DSP
+    When  DocSpera sends the non-FHIR JSON
+    Then  Non-FHIR JSON is moved to DSP defined data tables
+
+
+****************************************************************************************************************************************************
+Agile Methodologies
+===================
+
+In Agile methodologies, In our project we have participated in the PI planning meeting and then we have participated in the grooming then our scrum master created the sprint for us and created the sprint goals for us, In our jnj project we have a 2weeks of sprint, then our scrum master created the test type of jira for us and the story points will be maximum 3 or 4 days for every jiras we have and we attend the scrum call everyday and said our jira status to scrum master so thats how i know about the agile methodologies.
+
+***************************************************************************************************************************************************** 
+Severeity vs Priority in python
+
+
+*****************************************************************************************************************************************************
+OverRiding vs Overloading:
+
+OverRiding (Inheritance ): Method overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. The method in the subclass has the same name, parameters, and return type as the method in the superclass.
+
+Overloading (Polymorphism ): Function overloading is the ability to create multiple functions with the same name but different parameters. Python does not support traditional function overloading as seen in languages like C++ or Java, but similar behavior can be achieved using default arguments or variable-length arguments (*args and **kwargs).
+
+*****************************************************************************************************************************************************
+1. Encapsulation:
+Encapsulation refers to the bundling of data (attributes) and methods (functions) that operate on the data within a single unit. This hides the internal state of an object from the outside world and only exposes a controlled interface for interacting with the object.
+
+python:
+
+
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def start(self):
+        print(f"Starting the {self.make} {self.model}")
+
+    def stop(self):
+        print(f"Stopping the {self.make} {self.model}")
+
+# Creating an instance of Car
+my_car = Car("Toyota", "Corolla")
+my_car.start()
+my_car.stop()
+
+In this example, the make and model attributes of the Car class are encapsulated within the class, and methods like start() and stop() provide controlled access to the internal state of the object.
+
+
+
+2. Code Organization:
+Classes help organize code into logical units by grouping related data and functions together.
+
+python:
+
+class Calculator:
+    def add(self, x, y):
+        return x + y
+
+    def subtract(self, x, y):
+        return x - y
+
+# Creating an instance of Calculator
+calc = Calculator()
+print(calc.add(5, 3))       # Output: 8
+print(calc.subtract(5, 3))  # Output: 2
+Here, the Calculator class groups together functions related to arithmetic operations, providing a clear and organized structure to the code.
+
+
+3. Code Reusability:
+Classes support the creation of multiple instances (objects) with the same structure and behavior, promoting code reuse.
+
+python:
+
+class Dog:
+    def speak(self):
+        return "Woof!"
+
+class Cat:
+    def speak(self):
+        return "Meow!"
+
+# Creating instances of Dog and Cat
+dog = Dog()
+cat = Cat()
+print(dog.speak())  # Output: Woof!
+print(cat.speak())  # Output: Meow!
+In this example, both the Dog and Cat classes have a speak() method, demonstrating code reuse through class instantiation.
+
+4. Inheritance:
+Inheritance allows a new class to inherit attributes and methods from an existing class, enabling code reuse and promoting hierarchical relationships between classes.
+
+python:
+
+class Animal:
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+# Creating instances of Dog and Cat
+dog = Dog()
+cat = Cat()
+print(dog.speak())  # Output: Woof!
+print(cat.speak())  # Output: Meow!
+Here, both Dog and Cat inherit the speak() method from the Animal class, demonstrating code reuse and inheritance.
+
+5. Polymorphism:
+Polymorphism allows objects of different classes to be treated as objects of a common superclass, promoting flexibility and enabling more generic and reusable code.
+
+python:
+
+class Animal:
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+# Function to make an animal speak
+def make_animal_speak(animal):
+    return animal.speak()
+
+# Creating instances of Dog and Cat
+dog = Dog()
+cat = Cat()
+print(make_animal_speak(dog))  # Output: Woof!
+print(make_animal_speak(cat))  # Output: Meow!
+Here, the make_animal_speak() function accepts objects of different classes (e.g., Dog and Cat) that inherit from the Animal class, demonstrating polymorphism.
+
+6. Abstraction:
+Abstraction involves hiding the internal implementation details of a class and only exposing the necessary functionality to the outside world.
+
+python:
+
+class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+# Creating instances of Circle and Rectangle
+circle = Circle(5)
+rectangle = Rectangle(4, 6)
+print(circle.area())     # Output: 78.5
+print(rectangle.area())  # Output: 24
+In this example, the Shape class defines a method area() without implementing it. Subclasses like Circle and Rectangle implement the area() method according to their specific shapes, demonstrating abstraction by hiding the internal implementation details.
+
+******************************************************************************************************************************************************
+While loop: repeatedly execute a block of code as long as a specified condition remains True.
+count = 1
+
+while count <= 5:
+    print(count)
+    count += 1
+
+******************************************************************************************************************************************************
+performance vs load testing vs Stress testing
+process of measuring how well a system performs under various conditions and to evaluate the speed, responsiveness, and stability of a system, ensuring it meets performance requirements.
+
+load testing focuses on evaluating how a system behaves under expected load conditions.
+
+Stress testing focuses on evaluating how a system behaves under Extreme load conditions(Continuously increasing the number of users on a web application until the server crashes to determine its maximum capacity).
+
+******************************************************************************************************************************************************
+Authentication vs Authorization
+Authentication is the process of verifying who someone is.
+
+Authorization is the process of determining what an authenticated person is allowed to do in the specific area
+
+******************************************************************************************************************************************************
+Encapsulation vs Abstraction
+
+Encapsulation is the practice of bundling data and methods within a single unit, like a class, and controlling their access
+abstraction is about hiding complex implementation details and exposing only the essential functionalities.
+
+******************************************************************************************************************************************************
+Diffference between put and patch method?
+The PUT method is used to update an existing resource or replace it entirely with a new representation of the resource at the specified URI.
+PUT /api/users/123
+
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "age": 30
+}
+
+The PATCH method is used to apply partial modifications to a resource. When you send a PATCH request, you only need to include the fields that you want to update. It is used for partial updates and does not require the entire resource representation.
+PATCH /api/users/123
+Content-Type: application/json
+
+{
+    "age": 31
+}
+
+********************************************************************************************************************************************************
+What is an Array?
+An array is a special variable, which can hold more than one value at a time.
+
+An array is a collection of elements of the same type
+A list is a collection of elements that can be of different types
+
+*********************************************************************************************************************************************************
+what are fixtures in python with simple example?
+In Python, fixtures are functions or methods that set up preconditions or perform initialization tasks for test cases. They are commonly used in testing frameworks like pytest to provide a clean and consistent state for each test case to run in. Fixtures help in reducing code duplication, improving test readability, and maintaining test isolation.
+
+
+what are decorators in python with simple example?
+In Python, decorators are a powerful feature that allows you to modify or extend the behavior of functions or methods without changing their source code. Decorators are essentially functions that wrap other functions or methods, adding functionality to them.
+
+
+Why we use Tags in Robotframework?
+We can categorize the tests and run tests selectively based on the specific tag we applied for the testcases.
+
+
+Why we use Arguments in Robotframework?
+Used for parameterizing test cases and keywords to make them reusable and flexible.
+******************************************************************************************************************************************************
+Implicit vs Explicit waits
+
+implicit wait: is used to specify a default waiting time between each element and it applies globally to all elements.
+Explicit wait: is used to wait for a specific condition to occur before proceeding to next element and can be applied to specific elements.
+******************************************************************************************************************************************************
+API
+====
+
+
+import requests
+
+class test_sampletest:
+	def test_samplefunction(self):
+	try(
+		endpoint = (/api/users)
+		response = rrequests.get(endpoint)
+		self.assert(response.status_code, 200)
+		if response.status_code == 200 :
+			print("Succesfullt passed")
+		else ("failed"):
+		)
+	catch(error):
+	
+	
+	
+import requests
+import unittest
+
+class TestSampleTest(unittest.TestCase):
+    def test_sample_function(self):
+        try:
+            endpoint = "/api/users"
+            response = requests.get(endpoint)
+            self.assertEqual(response.status_code, 200)
+            if response.status_code == 200:
+                print("Successfully passed")
+            else:
+                print("Failed")
+        except Exception as error:
+            print(f"An error occurred: {error}")
+
+if __name__ == '__main__':
+    unittest.main()
+	
+	
+****
+UI
+===
+
+	
+from selenium import webbdrive
+from selenium.webdriver.common.by import BY
+from selenium.webdriver.common.keys import keys
+
+
+driver = webdriver.chrome();
+driver.get("www.smothing")
+
+driver.find_element(BY.XPATH: "//div[@classs="dropdown']")).click();    // The dropdown clicked and shows the 
+Ecom = driver.find_element(BY.ID: "//span[@id="ecom"]")).click();
+print(Ecom)
+
+
+******************************************************************************************************************************************************
+Difference btw yield and reutrn: 'return' sends a value and terminates a function, while 
+'yield' produces a value but retains the function's state, allowing it to resume from where it left off
+
+
+Return: Using "return" in a function sends a value and terminates the function.for ex: In the below code, the function simple_return returns the value 1 and then terminates. The second return statement is never reached.
+def simple_return():
+    return 1
+    return 2  # This line will never be executed
+
+result = simple_return()
+print(result)  # Output: 1
+
+
+Yield: Using "yield" in a function produces a value and retains the function's state, allowing it to resume where it left off.for ex: In this example, the function simple_yield uses yield to produce values one at a time. When called, it returns a generator that can be iterated over. The generator will yield the value 1, then resume and yield the value 2.
+def simple_yield():
+    yield 1
+    yield 2
+
+result = simple_yield()
+print(list(result))  # Output: [1, 2]
+
+******************************************************************************************************************************************************
+
+What is the difference between a Mutable datatype and an Immutable data type?
+Mutable data types can be edited i.e., they can change at runtime. Eg – List, Dictionary, etc.
+              :Mutable:
+			=============
+List:
+=====
+
+# Creating a list (mutable)
+my_list = [1, 2, 3]
+print("Original list:", my_list)  # Output: [1, 2, 3]
+
+# Modifying the list
+my_list.append(4)
+print("Modified list:", my_list)  # Output: [1, 2, 3, 4]
+
+# Changing an element
+my_list[0] = 10
+print("List after changing an element:", my_list)  # Output: [10, 2, 3, 4]
+
+Dictionary:
+===========
+
+# Creating a dictionary (mutable)
+my_dict = {'a': 1, 'b': 2}
+print("Original dictionary:", my_dict)  # Output: {'a': 1, 'b': 2}
+
+# Modifying the dictionary
+my_dict['c'] = 3
+print("Modified dictionary:", my_dict)  # Output: {'a': 1, 'b': 2, 'c': 3}
+
+# Changing a value
+my_dict['a'] = 10
+print("Dictionary after changing a value:", my_dict)  # Output: {'a': 10, 'b': 2, 'c': 3
+
+
+               :Immutable:
+			 ===============
+Immutable data types can not be edited i.e., they can not change at runtime. Eg – String, Tuple, etc.
+
+String:
+=======
+
+# Creating a string (immutable)
+my_string = "hello"
+print("Original string:", my_string)  # Output: hello
+
+# Trying to change a character (this will raise an error)
+try:
+    my_string[0] = 'H'
+except TypeError as e:
+    print("Error:", e)  # Output: Error: 'str' object does not support item assignment
+
+# Concatenating strings creates a new string
+new_string = my_string + " world"
+print("New string:", new_string)  # Output: hello world
+print("Original string remains unchanged:", my_string)  # Output: hello
+
+Tuple:
+======
+
+# Creating a tuple (immutable)
+my_tuple = (1, 2, 3)
+print("Original tuple:", my_tuple)  # Output: (1, 2, 3)
+
+# Trying to change an element (this will raise an error)
+try:
+    my_tuple[0] = 10
+except TypeError as e:
+    print("Error:", e)  # Output: Error: 'tuple' object does not support item assignment
+
+# Creating a new tuple by concatenation
+new_tuple = my_tuple + (4, 5)
+print("New tuple:", new_tuple)  # Output: (1, 2, 3, 4, 5)
+print("Original tuple remains unchanged:", my_tuple)  # Output: (1, 2, 3)
+
+
+******************************************************************************************************************************************************
+
+def remove_duplicates(input_string):
+    seen = set()
+    result = []
+    for char in input_string:
+        if char not in seen:
+            seen.add(char)
+            result.append(char)
+    return ''.join(result)
+
+input_string = "Malayalam"
+output_string = remove_duplicates(input_string)
+print(output_string)
+
+******************************************************************************************************************************************************
+print reverse: 
+================
+
+a = "Johnbabu"
+print(a[::-1])
+
+split specific value:
+=======================
+a = "10.08.98.001"
+# Split the string by dots and get the third element
+output = a.split('.')[2]
+print(output)  # Output: 98
+
+print between numbers:
+=======================
+a = [1, 3, 5, 7, 9]
+output = []
+for x in a:
+    output.append(x + 1)
+print(output)  # Output: [2, 4, 6, 8, 10]
+
+*****************************************************************************************************************************************************
+Separate the integers and strings from the list
+===============================================
+
+# Original list
+a = ["john", "sk", "pk", 9, 8, 6]
+
+# Separate lists for strings and integers
+strings = []
+integers = []
+
+# Loop through each item in the original list
+for item in a:
+    if isinstance(item, int):
+        integers.append(item)
+    elif isinstance(item, str):
+        strings.append(item)
+
+# Print the separated lists
+print("Strings:", strings)
+print("Integers:", integers)
+
+Strings: ['john', 'sk', 'pk']
+Integers: [9, 8, 6]
+
+******************************************************************************************************************************************************
+dictionary by zipping two lists together
+=========================================
+
+# Lists
+A = ["john", "babu", "jsk"]
+B = [8, 9, 7]
+Dict= {}
+
+Dict = dict(zip(A, B))
+print(Dict)
+
+        OR
+		
+for i in range (len(A)):
+    Dict[A[i]] = B[i]
+print(Dict)
+
+******************************************************************************************************************************************************
+REGEX METHODS:
+==============
+
+findall	Returns a list containing all matches
+search	Returns a Match object if there is a match anywhere in the string
+split	Returns a list where the string has been split at each match
+sub	    Replaces one or many matches with a string
+
+
+******************************************************************************************************************************************************
+Python methods:
+
+Method	                Description
+capitalize()	     Converts the first character to upper case
+casefold()	         Converts string into lower case
+center()	         Returns a centered string
+count()	             Returns the number of times a specified value occurs in a string
+encode()             Returns an encoded version of the string
+endswith()	         Returns true if the string ends with the specified value
+expandtabs()	     Sets the tab size of the string
+find()	             Searches the string for a specified value and returns the position of where it was found
+format()	         Formats specified values in a string
+format_map()         Formats specified values in a string
+index()	             Searches the string for a specified value and returns the position of where it was found
+isalnum()	         Returns True if all characters in the string are alphanumeric
+isalpha()	         Returns True if all characters in the string are in the alphabet
+isascii()	         Returns True if all characters in the string are ascii characters
+isdecimal()	         Returns True if all characters in the string are decimals
+isdigit()	         Returns True if all characters in the string are digits
+isidentifier()	     Returns True if the string is an identifier
+islower()	         Returns True if all characters in the string are lower case
+isnumeric()     	 Returns True if all characters in the string are numeric
+isprintable()	     Returns True if all characters in the string are printable
+isspace()	         Returns True if all characters in the string are whitespaces
+istitle()	         Returns True if the string follows the rules of a title
+isupper()	         Returns True if all characters in the string are upper case
+join()	             Converts the elements of an iterable into a string
+ljust()	             Returns a left justified version of the string
+lower()         	 Converts a string into lower case
+lstrip()	         Returns a left trim version of the string
+maketrans()	         Returns a translation table to be used in translations
+partition()	         Returns a tuple where the string is parted into three parts
+replace()	         Returns a string where a specified value is replaced with a specified value
+rfind()	             Searches the string for a specified value and returns the last position of where it was found
+rindex()	         Searches the string for a specified value and returns the last position of where it was found
+rjust()	             Returns a right justified version of the string
+rpartition()	     Returns a tuple where the string is parted into three parts
+rsplit()	         Splits the string at the specified separator, and returns a list
+rstrip()	         Returns a right trim version of the string
+split()	             Splits the string at the specified separator, and returns a list
+splitlines()	     Splits the string at line breaks and returns a list
+startswith()	     Returns true if the string starts with the specified value
+strip()	             Returns a trimmed version of the string
+swapcase()	         Swaps cases, lower case becomes upper case and vice versa
+title()	             Converts the first character of each word to upper case
+translate()	         Returns a translated string
+upper()	             Converts a string into upper case
+zfill()	             Fills the string with a specified number of 0 values at the beginning
+
+********************************************************************************************************************************************************************
+
+OOPS: Resuablity of code used in inheritance   
+
+
+Inheritance   :   Parent to child,  Parent methods and data are inherit to the child
+Encapsulation :   Encapsulate,      Relevant data and methods grouped into a single class or methods
+Polymorphism  :   ManyForms,        Many methods in a single name
+Abstraction   :   Hiding,           Abstract class is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class)
+
+********************************************************************************************************************************************************************
+Example: Monkey Patching a Module Function
+         =================================
+		 
+Suppose you have a module math_operations with a function add:
+
+python
+Copy code
+# math_operations.py
+def add(a, b):
+    return a + b
+
+# Original behavior
+import math_operations
+print(math_operations.add(2, 3))  # Output: 5
+You want to change the behavior of the add function at runtime.
+
+Monkey Patching:
+python
+Copy code
+import math_operations
+
+# Define a new function that will replace the original function
+def new_add(a, b):
+    return a * b
+
+# Apply the monkey patch
+math_operations.add = new_add
+
+# Test the modified behavior
+print(math_operations.add(2, 3))  # Output: 6
+
+*******************************************************************************************************************************************************************
+
+# [::-1] used to print reverse
+
+# op: ubabnhoJ
+# a = "Johnbabu"
+# print(a[::-1])
+  
+       OR
+  
+# a = "Johnbabu"
+def cal(a):
+	print(a)
+	
+cal(a)
+---------------------------------------------------------------------------------------------
+# SPLIT method is used to split the specific value
+
+# op: sgpt
+# a="sgpt@gmail.com"
+# b=a.split("@")
+# print(b[0])
+---------------------------------------------------------------------------------------------
+# STRIP method is used to remove space from the front of the 1st value
+
+# op: banana
+# a="       banana "
+# print(a.strip())
+---------------------------------------------------------------------------------------------
+# REMOVE method used to remove specific string using the specific string
+
+# op: ['john', 'babu', 'lkg']
+# a=["john", "babu", "jsk", "lkg"]
+# a.remove("jsk")
+# print(a)
+---------------------------------------------------------------------------------------------
+# POP method used to remove value using index
+
+# op: ['john', 'babu', 'lkg']
+# a = ["john", "babu", "jsk", "lkg"]
+# a.pop(2)
+# print(a)
+---------------------------------------------------------------------------------------------
+# Using Lambda with map():
+
+# op: [1, 4, 9, 16, 25]
+# numbers = [1, 2, 3, 4, 5]
+# squared = list(map(lambda x: x**2, numbers))
+# print(squared)
+---------------------------------------------------------------------------------------------
+# Using Lambda with sorted():
+
+# op: ['Bob', 'Dave', 'Alice', 'Charlie']
+# names = ["Alice", "Bob", "Charlie", "Dave"]
+# sorted_names = sorted(names, key=lambda name: len(name))
+# print(sorted_names)
+---------------------------------------------------------------------------------------------
+# compare a and b are same or not same
+# op: fail
+# a="john"
+# b = a[::-1]
+# if a == b:
+#     print("pass")
+# else:
+#     print("fail")
+---------------------------------------------------------------------------------------------
+# single line if else condition
+# a = "john"
+# print("pass" if a == a[::-1] else "fail")
+---------------------------------------------------------------------------------------------
+# Compare a and b
+# a = "This is Johnbabu"
+# b=(a.replace(" ","").lower())[::-1]
+# print(b)
+
+---------------------------------------------------------------------------------------------
+Reverse an integer 
+a = 521
+
+def clas(a):
+    b = str(a)           # Convert integer to string
+    reversed_b = b[::-1] # Reverse the string
+    print(type(reversed_b))
+    print(reversed_b)
+    c = int(reversed_b)  # Convert the reversed string back to an integer
+    print(type(c))
+    print(c)
+
+clas(a)
+
+****************************************************************************************************************************************************************
+
+Define iterators in Python?            -            object that allows you to iterate over collections of data, such as lists, tuples, dictionaries, and sets
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Pip -  the standard tool for installing Python packages and their dependencies in a secure manner.
+
+****************************************************************************************************************************************************************

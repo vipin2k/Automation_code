@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.0 on win32)" generated="2024-08-09T06:36:29.859112" rpa="false" schemaversion="5">
+<suite id="s1" name="TC1" source="D:\API_ROBOT_IN_UI\testcases\TC1.robot">
+<test id="s1-t1" name="Login and Add Items to Cart Using JSON Data" line="13">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-08-09T06:36:30.171614" level="INFO" html="true">Getting file '&lt;a href="file://D:\API_ROBOT_IN_UI\Configuration\file.json"&gt;D:\API_ROBOT_IN_UI\Configuration\file.json&lt;/a&gt;'.</msg>
+<msg time="2024-08-09T06:36:30.171614" level="INFO">${json_string} = {
+  "username" : "standard_user",
+  "password" : "secret_sauce"
+}</msg>
+<var>${json_string}</var>
+<arg>${JSON_FILE}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-08-09T06:36:30.171614" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>JSON String: ${json_string}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-08-09T06:36:30.171614" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-08-09T06:36:30.171614" level="FAIL">Evaluating expression 'import json; json.loads(\'\'\'{\n  "username" : "standard_user",\n  "password" : "secret_sauce"\n}\'\'\')' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<var>${json_data}</var>
+<arg>import json; json.loads('''${json_string}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2024-08-09T06:36:30.171614" elapsed="0.000000">Evaluating expression 'import json; json.loads(\'\'\'{\n  "username" : "standard_user",\n  "password" : "secret_sauce"\n}\'\'\')' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${name}</var>
+<arg>${json_data['username']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.171614" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${password}</var>
+<arg>${json_data['password']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.171614" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.171614" elapsed="0.000000"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.171614" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>//*[@type="text"]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.171614" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>//*[@type="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Title: ${title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${bag_name}</var>
+<arg>(//*[@class="inventory_item_name"])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Bag: ${bag_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${bag_price}</var>
+<arg>(//*[@class="inventory_item_price"])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Bag Price: ${bag_price}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>(//*[@class='btn_primary btn_inventory' and text()='ADD TO CART'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${shirt_name}</var>
+<arg>(//*[@class="inventory_item_name"])[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Shirt: ${shirt_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${shirt_price}</var>
+<arg>(//*[@class="inventory_item_price"])[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Shirt Price: ${shirt_price}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>(//*[@class='btn_primary btn_inventory' and text()='ADD TO CART'])[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@data-icon="shopping-cart"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${total}</var>
+<arg>float(${bag_price.replace('$','')) + float(${shirt_price.replace('$',''))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Calculated Total: $${total}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="btn_secondary" and text()="Continue Shopping"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>(//*[@class="product_sort_container"]/option["Price (high to low)"])[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${item_count}</var>
+<arg>//*[@class="inventory_item_name"]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Total items: ${item_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.187221" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${product_name}</var>
+<arg>(//*[@class="inventory_item_name"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.202833" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Product ${index}: ${product_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.202833" elapsed="0.000000"/>
+</kw>
+<var name="${index}"/>
+<status status="NOT RUN" start="2024-08-09T06:36:30.202833" elapsed="0.000000"/>
+</iter>
+<var>${index}</var>
+<value>1</value>
+<value>${item_count+1}</value>
+<status status="NOT RUN" start="2024-08-09T06:36:30.202833" elapsed="0.000000"/>
+</for>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="bm-burger-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.202833" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>(//*[@class="bm-item menu-item"])[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-08-09T06:36:30.202833" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-08-09T06:36:30.171614" elapsed="0.031219">Evaluating expression 'import json; json.loads(\'\'\'{\n  "username" : "standard_user",\n  "password" : "secret_sauce"\n}\'\'\')' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</test>
+<status status="FAIL" start="2024-08-09T06:36:29.859112" elapsed="0.343721"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
